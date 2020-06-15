@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vue Sample</title>
+</head>
+<body>
+	<div id="app">
+		{{message}} 
+	</div> 
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			message: 'Hello Vue.js!'
+		},
+		beforeCreate: function(){
+			console.log("beforeCreate");
+		},
+		created: function(){
+			console.log("create");
+		},
+		mounted: function(){
+			console.log("mounted");
+			this.message = '안녕 뷰!';
+		},
+		updated: function(){
+			console.log("updated");
+		} 
+		
+	});
+</script>
+
