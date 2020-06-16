@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="app">
+		<h1>인스턴스 영역 1</h1>
+		<global-component></global-component>
+		<local-component></local-component>
+	</div>
+	
+	<hr>
+	
+	<div id="app2">
+		<h1>인스턴스 영역 2</h1>
+		<global-component></global-component>
+		<local-component></local-component>
+	</div>
+
+</body>
+ 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	Vue.component('global-component',{
+		template: '<div>전역 컴포넌트</div>'
+	});
+	
+	var cmp = {
+			template: '<div>지역 컴포넌트</div>'
+	};
+	
+	new Vue({
+		el: '#app',
+		components: {
+			'local-component' : cmp
+		}
+	});  
+	
+	new Vue({
+		el: '#app2',
+		components: {
+			'local-component' : cmp
+		}
+	});
+	
+	new Vue({
+		el: '#app2'
+	});
+</script>
+</html>
