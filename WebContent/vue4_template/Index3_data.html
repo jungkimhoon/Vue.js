@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="app">
+	<!-- {{ var = a = 10}} 					선언문 사용 불가능-->
+	<!--	{{ if(true){return 100} }} 		분기 구문 사용 불가능-->
+	<!--	{{true ? 100 : 0}}				삼항 연산자 사용가능 -->
+	
+	{{ message.split('').reverse().join('') }} <!-- 추천X 복잡한 연산은 인스턴스 안에서 수행하라. -->
+	<br>
+	{{ reversedMessage }}
+	</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data: {
+			message: 'Hello Vue.js!'
+		},
+		computed: {
+			reversedMessage: function(){
+				return this.message.split('').reverse().join('');
+			}
+		}
+	});
+
+</script>
+</html>

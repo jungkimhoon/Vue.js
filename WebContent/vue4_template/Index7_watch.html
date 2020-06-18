@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="app">
+		<input v-model="message">
+	</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			message: 'Hello Vue.js!' 
+		},
+		watch: {
+			message: function(data){
+				console.log("message의 값이 바뀝니다. : ",data);
+			}
+		}
+	});
+</script>
+</html> 
